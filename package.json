@@ -3,10 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check build-only",
-    "preview": "vite preview --port 4173",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit"
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
   },
   "dependencies": {
     "vue": "^3.2.36"
