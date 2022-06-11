@@ -12,11 +12,13 @@
     "vue": "^3.2.36"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.25.1",
     "@iconify-json/carbon": "^1.1.5",
     "@types/node": "^16.11.36",
     "@unocss/reset": "^0.38.2",
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/tsconfig": "^0.1.3",
+    "eslint": "^8.17.0",
     "npm-run-all": "^4.1.5",
     "typescript": "~4.7.2",
     "unocss": "^0.38.2",
