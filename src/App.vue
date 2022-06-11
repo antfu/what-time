@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div>Hello</div>
+  <Hello name="Anthony" />
 </template>
 
 <style>
