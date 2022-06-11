@@ -8,7 +8,9 @@ specifiers:
   '@vitejs/plugin-vue': ^2.3.3
   '@vue/tsconfig': ^0.1.3
   eslint: ^8.17.0
+  fuse.js: ^6.6.2
   npm-run-all: ^4.1.5
+  timezones.json: ^1.6.1
   typescript: ~4.7.2
   unocss: ^0.38.2
   unplugin-auto-import: ^0.8.7
@@ -18,6 +20,8 @@ specifiers:
   vue-tsc: ^0.35.2
 
 dependencies:
+  fuse.js: 6.6.2
+  timezones.json: 1.6.1
   vue: 3.2.37
 
 devDependencies:
@@ -1765,6 +1769,11 @@ packages:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: true
 
+  /fuse.js/6.6.2:
+    resolution: {integrity: sha512-cJaJkxCCxC8qIIcPBF9yGxY0W/tVZS3uEISDxhYIdtk8OL93pe+6Zj7LjCqVV4dzbqcriOZ+kQ/NE4RXZHsIGA==}
+    engines: {node: '>=10'}
+    dev: false
+
   /get-intrinsic/1.1.2:
     resolution: {integrity: sha512-Jfm3OyCxHh9DJyc28qGk+JmfkpO41A4XkneDSujN9MDXrm4oDKdHvndhZ2dN94+ERNfkYJWDclW6k2L/ZGHjXA==}
     dependencies:
@@ -3010,6 +3019,10 @@ packages:
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
+
+  /timezones.json/1.6.1:
+    resolution: {integrity: sha512-lAYx2w4qyN2nzJ7wNSxdaNEgWjvuBvN6/AzLdOAN0BsVAvKJVkOqApPvgOKYeESWe40Qrxc+KPVc9eQiy3iCZw==}
+    dev: false
 
   /to-regex-range/5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
