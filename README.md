@@ -1,6 +1,10 @@
-# World Time
+# **WHAT-TIME** works for you?
 
-A [WorldTimeBuddy](https://www.worldtimebuddy.com/) clone build during live streaming.
+A time schedular for multiple timezones (a [WorldTimeBuddy](https://www.worldtimebuddy.com/) clone). [In Progress]
+
+## Live Streams
+
+This project is made and progresses during Anthony's live streams.
 
 - Bilibili: https://live.bilibili.com/835461
 - YouTube: https://www.youtube.com/anthonyfu7
