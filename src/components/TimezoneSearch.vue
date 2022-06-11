@@ -6,16 +6,16 @@ const fuse = new Fuse(timezones, {
   keys: ['name'],
 })
 
-const input = ref('')
-const index = ref(0)
+let input = $ref('')
+let index = $ref(0)
 const searchResult = computed(() => {
-  return fuse.search(input.value)
+  return fuse.search(input)
 })
 
 function add(t: Timezone) {
   addToTimezone(t)
-  input.value = ''
-  index.value = 0
+  input = ''
+  index = 0
 }
 </script>
 
