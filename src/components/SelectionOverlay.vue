@@ -43,8 +43,8 @@ const rightWhiteout = $computed(() => ({
 
 <template>
   <div v-show="pressed" ref="el" pointer-events-none>
-    <div absolute :style="leftWhiteout" bg-white:80 />
-    <div absolute :style="rightWhiteout" bg-white:80 />
+    <div absolute :style="leftWhiteout" bg-base op80 />
+    <div absolute :style="rightWhiteout" bg-base op80 />
     <div absolute border="3 green6 rounded" shadow :style="position" />
   </div>
 </template>
