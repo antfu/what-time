@@ -22,7 +22,7 @@ const time = $computed(() => formatter.format(now.value))
 
 <template>
   <div flex="~ col md:row" gap3 py1>
-    <div flex="~ wrap" gap3>
+    <div flex="~" gap3>
       <div
         w-8 ma op80 font-bold text-center
         :title="`${timezone.offset} GMT`"
