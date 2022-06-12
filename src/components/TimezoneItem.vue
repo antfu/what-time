@@ -14,7 +14,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 const state = $computed(() => timezone.name.split('/')[0].replace(/_/g, ' '))
 const city = $computed(() => timezone.name.split('/')[1]?.replace(/_/g, ' ') || '')
 const offset = $computed(() => {
-  const offset = timezone.offset - currentOffset.value
+  const offset = timezone.offset - homeOffset.value
   return offset > 0 ? `+${offset}` : offset
 })
 const time = $computed(() => formatter.format(now.value))
