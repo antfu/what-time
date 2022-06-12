@@ -13,13 +13,19 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 
 const state = $computed(() => timezone.name.split('/')[0].replace(/_/g, ' '))
 const city = $computed(() => timezone.name.split('/')[1]?.replace(/_/g, ' ') || '')
-const offset = $computed(() => timezone.offset > 0 ? `+${timezone.offset}` : timezone.offset)
+const offset = $computed(() => {
+  const offset = timezone.offset - currentOffset.value
+  return offset > 0 ? `+${offset}` : offset
+})
 const time = $computed(() => formatter.format(now.value))
 </script>
 
 <template>
   <div flex flex-wrap gap2 py1>
-    <div w-8 ma op80 font-bold>
+    <div
+      w-8 ma op80 font-bold text-center
+      :title="`${timezone.offset} GMT`"
+    >
       {{ offset }}
     </div>
     <div flex="~ col" text-left flex-auto>
