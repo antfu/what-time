@@ -26,7 +26,7 @@ export const storage = useStorage<State>('what-time-state', {
 export const now = useNow({ interval: 30_000 })
 export const zoneNames = toRef(storage.value, 'zones')
 export const homeZone = toRef(storage.value, 'home')
-export const homeOffset = ref(timezones.find(i => i.name === homeZone.value)?.offset || 0)
+export const homeOffset = computed(() => timezones.find(i => i.name === homeZone.value)?.offset || 0)
 export const zones = computed(() => zoneNames.value.map(name => timezones.find(i => i.name === name)))
 
 export function addToTimezone(timezone: Timezone) {
@@ -45,6 +45,10 @@ export function moveZone(timezone: Timezone, delta: 1 | -1) {
   const other = zoneNames.value[target]
   zoneNames.value[target] = timezone.name
   zoneNames.value[index] = other
+}
+
+export function setHomeZone(timezone: Timezone) {
+  homeZone.value = timezone.name
 }
 
 if (!zoneNames.value?.length)

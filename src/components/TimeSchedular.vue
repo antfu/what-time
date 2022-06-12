@@ -16,19 +16,26 @@
         flex="~ col" justify-center
       >
         <button
-          icon-btn m--1px i-carbon-close
+          v-if="homeZone.value !== zone.name"
+          icon-btn m--1px i-ri-close-fill
           title="Remove"
           @click="removeZone(zone)"
         />
         <button
+          v-if="homeZone.value !== zone.name"
+          icon-btn m--1px i-ri-home-2-fill scale-75
+          title="Set to home zone"
+          @click="setHomeZone(zone)"
+        />
+        <button
           v-if="idx !== 0"
-          icon-btn m--1px i-carbon-caret-up
+          icon-btn m--1px i-ri-arrow-up-s-fill
           title="Move up"
           @click="moveZone(zone, -1)"
         />
         <button
           v-if="idx !== zones.value.length - 1"
-          icon-btn m--1px i-carbon-caret-down
+          icon-btn m--1px i-ri-arrow-down-s-fill
           title="Move down"
           @click="moveZone(zone, 1)"
         />
