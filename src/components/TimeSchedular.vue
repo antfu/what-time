@@ -2,13 +2,13 @@
 </script>
 
 <template>
-  <div>
+  <div of-x-auto relative>
     <div
       v-for="zone, idx of zones.value"
       :key="zone.name"
       px4 py2 border="b base" relative
     >
-      <TimezoneItem :timezone="zone">
+      <TimezoneItem :timezone="zone" w-max>
         <TimeDial :timezone="zone" />
       </TimezoneItem>
       <div
@@ -41,5 +41,6 @@
         />
       </div>
     </div>
+    <SelectionOverlay absolute inset-0 />
   </div>
 </template>
