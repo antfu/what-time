@@ -1,9 +1,8 @@
 <script setup lang="ts">
-const itemHeight = 'h15'
 </script>
 
 <template>
-  <div relative>
+  <div relative select-none>
     <div
       absolute left--6 top-0 bottom-0
       flex="~ col"
@@ -11,8 +10,8 @@ const itemHeight = 'h15'
       <div
         v-for="zone, idx of zones.value"
         :key="zone.name"
-        text-xl :class="itemHeight"
-        flex="~ col none" justify-center items-center
+        flex="~ col none" text-xl justify-center items-center
+        :style="{ height: `${timezoneItemHeight}px` }"
       >
         <button
           v-if="idx !== 0"
@@ -40,18 +39,25 @@ const itemHeight = 'h15'
         />
       </div>
     </div>
-    <div of-x-auto of-visible>
+    <div of-x-auto of-visible relative>
       <div
         v-for="zone of zones.value"
         :key="zone.name"
         border="b base"
       >
-        <div flex="~ row" gap3 px3 items-center>
-          <TimezoneItem :class="itemHeight" :timezone="zone" />
+        <div flex="~ row" items-center w-max>
+          <TimezoneItem
+            :style="{ height: `${timezoneItemHeight}px`, width: `${timezoneItemWidth}px` }"
+            :timezone="zone"
+            flex-none px3
+          />
           <TimeDial :timezone="zone" />
         </div>
       </div>
+      <SelectionOverlay
+        absolute inset-0 w-full
+        :style="{ left: `${timezoneItemWidth}px` }"
+      />
     </div>
-    <SelectionOverlay absolute inset-0 />
   </div>
 </template>
