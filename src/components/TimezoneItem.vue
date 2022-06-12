@@ -21,33 +21,30 @@ const time = $computed(() => formatter.format(now.value))
 </script>
 
 <template>
-  <div flex="~ col md:row" gap3 py1>
-    <div flex="~" gap3>
+  <div flex="~" items-center gap3>
+    <div
+      w-8 ma op80 font-bold text-center
+      :title="`${timezone.offset} GMT`"
+    >
       <div
-        w-8 ma op80 font-bold text-center
-        :title="`${timezone.offset} GMT`"
-      >
-        <div
-          v-if="timezone.name === homeZone.value"
-          i-ri-home-2-fill op50 ma
-        />
-        <div v-else text-sky6>
-          {{ offset }}
-        </div>
-      </div>
-      <div flex="~ col" text-left flex-auto w-30>
-        <div>
-          {{ city }}
-          <sup border="~ base rounded" px1>{{ timezone.abbr }}</sup>
-        </div>
-        <div text-sm op50 leading-1em>
-          {{ state }}
-        </div>
-      </div>
-      <div tabular-nums ma text-sm w-20>
-        {{ time }}
+        v-if="timezone.name === homeZone.value"
+        i-ri-home-2-fill op50 ma
+      />
+      <div v-else text-sky6>
+        {{ offset }}
       </div>
     </div>
-    <slot />
+    <div flex="~ col" text-left flex-auto w-30>
+      <div>
+        {{ city }}
+        <sup border="~ base rounded" px1>{{ timezone.abbr }}</sup>
+      </div>
+      <div text-sm op50 leading-1em>
+        {{ state }}
+      </div>
+    </div>
+    <div tabular-nums ma text-sm w-20>
+      {{ time }}
+    </div>
   </div>
 </template>

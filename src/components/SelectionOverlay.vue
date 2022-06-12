@@ -11,7 +11,7 @@ const { x, y } = useMouse()
 const el = ref<HTMLElement>()
 const box = reactive(useElementBounding(el))
 
-useEventListener('mousedown', (e) => {
+useEventListener('pointerdown', (e) => {
   leftEdge = x.value - box.left
 })
 
